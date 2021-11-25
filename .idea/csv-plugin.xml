@@ -24,6 +24,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\persistence\sqlite\users.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\visual\subplots\temps.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
       </map>
     </option>
   </component>

@@ -51,19 +51,35 @@ import sqlite3
 #         print("The supplier for each products are as follows :")
 #         print(f"Product name: {values[0]}, Supplier: {values[1]}, Supplier location : {values[3]}")
 
-def display_product_missing_suppliers():
-    db= sqlite3.connect("catalogue2.db")
+# def display_product_missing_suppliers():
+#     db= sqlite3.connect("catalogue2.db")
+#     cursor = db.cursor()
+#     sql = """SELECT po.name, su.name\
+#           FROM product po \
+#           LEFT OUTER JOIN supplier su ON su.supplier_id = po.supplier_id \
+#           WHERE po.supplier_id = NULL"""
+#     cursor.execute(sql)
+#     records = cursor.fetchall()
+#     for values in records:
+#         print("The supplier for each products are as follows: ")
+#         print(f"product name : {values[0]}, Supplier: {values[1]} ")
+#
+#     db.close()
+#
+# display_product_missing_suppliers()
+
+def display_supplier_missing_product():
+    db = sqlite3.connect("catalogue2.db")
     cursor = db.cursor()
-    sql = "SELECT product.name, supplier.name"\
-          "FROM PRODUCT "\
-          "LEFT OUTER JOIN supplier ON product.supplier_id = supplier.supplier_id "
+    sql = "SELECT su.name, po.name FROM supplier su LEFT OUTER JOIN product po ON su.supplier_id = po.supplier_id WHERE po.supplier_id is NULL"
     cursor.execute(sql)
     records = cursor.fetchall()
     for values in records:
-        print("The supplier for each products are as follows: ")
-        print(f"product name : {values[0]}, Supplier: {values[1]} ")
+        print(f"Supplier {records[0]}, product: {values[1]}")
 
     db.close()
+
+display_supplier_missing_product()
 
 
 
