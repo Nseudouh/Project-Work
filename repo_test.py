@@ -1,1 +1,1 @@
-print("Hello")
+print("Welcome to com728 class")
