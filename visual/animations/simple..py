@@ -15,6 +15,7 @@ def animate(frame):
 
 
 
+
 def run():
     global fig
     my_animation = animation.FuncAnimation(fig, animate, interval=1000, frames=10,repeat=False,)
