@@ -1,2 +1,2 @@
 # com728
-University work for COM728: Programming for Problem solving 
+University work for Solent Southampton University (Com 728): Programming for Problem solving 
